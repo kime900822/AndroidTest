@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GeoQuiz</string>
+    <string name="true_button">true</string>
+    <string name="false_button">false</string>
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect!</string>
+    <string name="next_button">NEXT</string>
+    <string name="pri_button">PREVIEW</string>
+    <string name="question_africa">111111111112</string>
+    <string name="question_americas">2222222222222222</string>
+    <string name="question_asia">333333333</string>
+    <string name="question_oceans">4444444444444</string>
+    <string name="question_mideast">5555555555555555</string>
+
+</resources>
