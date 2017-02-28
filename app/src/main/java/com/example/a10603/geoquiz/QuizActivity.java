@@ -3,6 +3,7 @@ package com.example.a10603.geoquiz;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -29,6 +30,7 @@ public class QuizActivity extends AppCompatActivity {
             new Question(R.string.question_asia, true),
     };
     private int mCurrentInt = 0;
+    private static final String TAG="QuizActivity";
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -47,8 +49,29 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG,"onDestroy(Bundle) called");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG,"onResume(Bundle) called");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG,"onPause(Bundle) called");
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Log.d(TAG,"onCreat(Bundle) called");
+
         setContentView(R.layout.activity_quiz);
         mTrueButton = (Button) findViewById(R.id.true_button);
         mFalseButton = (Button) findViewById(R.id.false_button);
@@ -129,7 +152,7 @@ public class QuizActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-
+        Log.d(TAG,"onStart(Bundle) called");
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         mClient.connect();
@@ -158,7 +181,7 @@ public class QuizActivity extends AppCompatActivity {
     @Override
     public void onStop() {
         super.onStop();
-
+        Log.d(TAG,"onStop(Bundle) called");
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         AppIndex.AppIndexApi.end(mClient, getIndexApiAction());
